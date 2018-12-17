@@ -47,6 +47,8 @@ const CatchContainer = styled.div `
     display: flex;
     width: 100vw;
     flex-wrap: wrap;
+    min-height: 500px;
+    margin: 15px auto 15px;
     flex-direction: row;
     background-color: white;
     ${media.phone`flex-direction: column;height: 85vh;`}
@@ -98,7 +100,6 @@ const Hook = styled.div `
     display: flex;
     align-items: center;
     flex-direction: row;
-    margin-bottom: 25px;
     justify-content: space-around;
     // background-color: #5B3091;
     & > h1, h3 {

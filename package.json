@@ -2,7 +2,7 @@
   "name": "megabrokers-latam",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.megabrokerslatam.com",
+  "homepage": "http://www.aderada.com/megalatam-react/",
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
