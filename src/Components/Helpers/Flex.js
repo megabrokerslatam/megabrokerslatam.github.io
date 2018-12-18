@@ -24,7 +24,6 @@ const Row = styled.div `
     flex-direction: row;
 `
 const RowBetween = styled(Row)`
-    width: 90%;
     justify-content: space-between;
 `
 const RowAround = styled(Row)`

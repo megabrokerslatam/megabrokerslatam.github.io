@@ -4,8 +4,8 @@ import styled from 'styled-components'
 // Component imports
 import Catch from "../Components/Catch";
 import Companies from "../Components/Companies";
-import Blogs from "../Components/Blogs";
-import Testimonies from "../Components/Testimonies";
+import Blogs from "../Components/BlogLanding";
+import Testimonies from "../Components/TestimonyLanding";
 import Navigator from "../Components/Navigator";
 import Footer from "../Components/Footer";
 
@@ -18,7 +18,7 @@ class Landing extends Component {
         <Companies />
         <Blogs />
         <Testimonies />
-        <Footer static="false"/>
+        <Footer />
       </LandingContainer>
     );
   }
@@ -26,6 +26,7 @@ class Landing extends Component {
 
 const LandingContainer = styled.div `
     width: 100vw;
+    overflow: hidden;
 `
 
 export default Landing;

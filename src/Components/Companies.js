@@ -4,7 +4,7 @@ import styled from 'styled-components'
 // Component imports
 import Company from './Company'
 // importing flex components
-import { Flex1, Flex2, Column, RowBetween} from './Helpers/Flex'
+import { RowBetween} from './Helpers/Flex'
 // importing media queries function
 import { media } from './Helpers/MediaQueries'
 // importing imagies
@@ -47,9 +47,10 @@ const CompaniesContainer = styled.div `
     justify-content: space-between;
     & > h2 {
         margin: 15px auto 10px;
-        font-size: 1.6em;
-        font-weight: 150;
+        font-weight: 180;
+        font-size: 1.9em;
         color: dimgray;
+        width: 90%;
         ${media.desktop``}
         ${media.tablet`font-size: 1.6em;margin: 35px 55px 30px;font-weight: 250;line-height:1.8em`}
         ${media.phone`font-size: 1.2em;margin: 30px 35px 40px;font-weight: 100;line-height:2em`}
@@ -58,6 +59,7 @@ const CompaniesContainer = styled.div `
 const CompanyGroup = styled(RowBetween) `
     margin-bottom: 15px;
     flex-wrap: wrap;
+    width: 100%;
 `
 
 export default Companies;

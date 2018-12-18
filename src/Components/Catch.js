@@ -4,16 +4,13 @@ import styled from 'styled-components'
 //importing routing elements
 import { Link } from 'react-router-dom'
 // Component imports
-
 // importing flex components
-import { Flex1, Flex2, Column } from './Helpers/Flex'
+import { Flex2, Column } from './Helpers/Flex'
 // importing media queries function
 import { media } from './Helpers/MediaQueries'
 // importing images
 import family from '../assets/images/Family.png'
-import familyAlt from '../assets/images/FamilyActive.png'
 import group from '../assets/images/Group.png'
-import groupAlt from '../assets/images/GroupActive.png'
 
 class Catch extends Component {
   render() {
@@ -51,7 +48,7 @@ const CatchContainer = styled.div `
     margin: 15px auto 15px;
     flex-direction: row;
     background-color: white;
-    ${media.phone`flex-direction: column;height: 85vh;`}
+    ${media.phone`flex-direction: column`}
 `
 const Intro = styled.div `
     flex: 4;
@@ -106,7 +103,7 @@ const Hook = styled.div `
         margin: 0;
     }
     ${media.tablet`margin-bottom: 10px;`}
-    ${media.phone`flex-direction:column;margin-bottom: 15px;`}
+    ${media.phone`flex-direction:column;margin: 25px auto;`}
 `
 const PlansButton = styled.div `
     width: 355px;

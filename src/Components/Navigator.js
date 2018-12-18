@@ -31,31 +31,45 @@ export default class Navigator extends React.Component {
             <div>
                 <Sidenav className={this.state.sidenav? 'show' : 'hide'}>
                     <Header>
-                        <Logo alt="megabrokerslatam logo" src={logoWhite} />
+                        <Link to="/"><Logo alt="megabrokerslatam logo" src={logoWhite} /></Link>
                         <Flex1 />
                         <HeaderIcon alt="close" src={close} onClick={this.toggleSidenav}/>
                     </Header>
                     <SidenavItem><Link to="/plans">PLANES</Link></SidenavItem>
-                    <SidenavItem><Link to="/companies">COMPANIAS</Link></SidenavItem>
+                    {/* <SidenavItem><Link to="/companies">COMPANIAS</Link></SidenavItem> */}
                     <SidenavItem><Link to="/about">NOSOTROS</Link></SidenavItem>
-                    <SidenavItem><Link to="/testimonies">TESTIMONIOS</Link></SidenavItem>
                     <SidenavItem><Link to="/blog">BLOG</Link></SidenavItem>
+                    <SidenavItem><Link to="/testimonies">TESTIMONIOS</Link></SidenavItem>
                     <Row>
                         <SidenavSmallItem><Link to="/blog">Poliza de Privacidad</Link></SidenavSmallItem>
                         <SidenavSmallItem><Link to="/blog">Terminos y Condiciones</Link></SidenavSmallItem>
                     </Row>
                 </Sidenav>
                 {!this.state.sidenav && <FakeHeader />}
-                <FloatingHeader className={!this.state.sidenav? 'show' : 'hide'}>
-                    <Logo alt="megabrokerslatam logo" src={logo} />
-                    <Link to="/companies"><HeaderItem>COMPANIAS</HeaderItem></Link>
-                    <Link to="/about"><HeaderItem>NOSOTROS</HeaderItem></Link>
-                    <Link to="/testimonios"><HeaderItem>TESTIMONIOS</HeaderItem></Link>
-                    <Link to="/blog"><HeaderItem>BLOG</HeaderItem></Link>
-                    <Flex1 />
-                    <Link to="/plans"><HeaderButton>Encuentra tu Plan</HeaderButton></Link>
-                    <HeaderIcon alt="burger menu" src={burger} onClick={this.toggleSidenav}/>
-                </FloatingHeader>
+                {this.props.fixed ? (
+                    <FixedHeader className={!this.state.sidenav? 'show' : 'hide'}>
+                        <Link to="/"><Logo alt="megabrokerslatam logo" src={logo} /></Link>
+                        {/* <Link to="/companies"><HeaderItem>COMPANIAS</HeaderItem></Link> */}
+                        <Flex1 />
+                        <Link to="/about"><HeaderItem>NOSOTROS</HeaderItem></Link>
+                        <Link to="/blog"><HeaderItem>BLOG</HeaderItem></Link>
+                        <Link to="/testimonies"><HeaderItem>TESTIMONIOS</HeaderItem></Link>
+                        <Link to="/plans"><HeaderButton>Encuentra tu Plan</HeaderButton></Link>
+                        <HeaderIcon alt="burger menu" src={burger} onClick={this.toggleSidenav}/>
+                    </FixedHeader>
+                ) :
+                (
+                    <FloatingHeader className={!this.state.sidenav? 'show' : 'hide'}>
+                        <Link to="/"><Logo alt="megabrokerslatam logo" src={logo} /></Link>
+                        {/* <Link to="/companies"><HeaderItem>COMPANIAS</HeaderItem></Link> */}
+                        <Flex1 />
+                        <Link to="/about"><HeaderItem>NOSOTROS</HeaderItem></Link>
+                        <Link to="/blog"><HeaderItem>BLOG</HeaderItem></Link>
+                        <Link to="/testimonies"><HeaderItem>TESTIMONIOS</HeaderItem></Link>
+                        <Link to="/plans"><HeaderButton>Encuentra tu Plan</HeaderButton></Link>
+                        <HeaderIcon alt="burger menu" src={burger} onClick={this.toggleSidenav}/>
+                    </FloatingHeader>
+                )}
             </div>
         )
     }
@@ -76,9 +90,9 @@ const Header = styled(Row) `
 `
 const FloatingHeader = styled(Header)`
     top: 0;
-    z-index: 7;
+    z-index: 5;
     position: fixed;
-    background-color: white;
+    background-color: rgba(255,255,255,0.95);
     border-bottom: 0.5px solid gainsboro;
     &.hide {
         display: none;
@@ -88,6 +102,11 @@ const FloatingHeader = styled(Header)`
         dsiplay: flex;
         transform: translate3d(0vw, 0, 0);
     }
+`
+const FixedHeader = styled(Header)`
+    top:0px;
+    overflow:hidden;
+    position:absolute;
 `
 const HeaderItem = styled.div `
     height: 58px;
@@ -101,21 +120,18 @@ const HeaderItem = styled.div `
         color: #5B3091;
         background-color: rgba(220,220,220,0.3);
     }
-    ${media.desktop``}
-    ${media.tablet`display:none`}
     ${media.phone`display:none`}
 `
 const HeaderButton = styled(Button)`
-    ${media.desktop``}
-    ${media.tablet`display:none`}
+    margin-left: 10px;
+    outline: none;
     ${media.phone`display:none`}
 `
 const HeaderIcon = styled.img `
     height: 32px;
     width: auto;
     display:none;
-    ${media.desktop`display:none`}
-    ${media.tablet`display:block`}
+    ${media.tablet`display:none`}
     ${media.phone`display:block`}
 `
 const Sidenav = styled.div `
