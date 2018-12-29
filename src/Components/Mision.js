@@ -6,7 +6,7 @@ import { Row, Flex1 } from './Helpers/Flex'
 // importing media queries function
 import { media } from './Helpers/MediaQueries'
 // importing images
-import group from '../assets/images/Group.png'
+import group from '../assets/images/Asesores.png'
 
 const Mision = props => {
     return (

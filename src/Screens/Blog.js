@@ -28,9 +28,9 @@ const BlogCont = styled.div `
   justify-content: space-between;
   & > h2 {
       font-size: 3em;
-      font-weight: 180;
+      font-weight: 300;
       color: dimgray;
-      margin: 50px auto 75px;
+      margin: 75px auto 75px;
       ${media.tablet`font-size: 1.9em;margin: 35px 55px 30px;font-weight: 250;line-height:1.7em`}
       ${media.phone`font-size: 1.2em;margin: 30px 35px 40px;font-weight: 100;line-height:1.9em`}
   }

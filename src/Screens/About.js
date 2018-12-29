@@ -36,7 +36,7 @@ const AboutContainer = styled.div `
       width: 85%;
       color: dimgray;
       font-size: 3em;
-      font-weight: 350;
+      font-weight: 300;
       line-height: 1.4em;
       text-align: center;
       margin: 75px auto 75px;
