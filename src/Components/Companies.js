@@ -22,7 +22,7 @@ class Companies extends Component {
       <CompaniesContainer>
         <h2>Trabajamos con las aseguradoras de mejor reputacion en la industria</h2>
         <CompanyGroup>
-            <Company url={bupa}></Company>
+            {/* <Company url={bupa}></Company> */}
             <Company url={best}></Company>
             <Company url={bmi}></Company>
             <Company url={allianz}></Company>
@@ -59,7 +59,7 @@ const CompaniesContainer = styled.div `
 const CompanyGroup = styled(RowBetween) `
     margin-bottom: 15px;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
 `
 
 export default Companies;

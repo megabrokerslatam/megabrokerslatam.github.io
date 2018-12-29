@@ -81,7 +81,7 @@ const Subtitle = styled.h3 `
     font-weight: 100;
     line-height: 1.5em;
     ${media.tablet`
-        font-size: 1.7em;
+        font-size: 1.6em;
         font-weight: 250;
         line-height: 1.5em;
     `}
@@ -126,7 +126,7 @@ const FamilyPlans = styled(PlansButton) `
     &:hover {
         z-index: 2;
         border-color: white;
-        transform: translate3d(10px, 0, 0) scale(1.01);
+        transform: scale(1.01);
         ${media.tablet`transform: translate3d(10px, 0, 0);`}
         ${media.phone`transform: translate3d(0,0,0);`}
     }
@@ -138,7 +138,7 @@ const GroupPlans = styled(PlansButton)`
     &:hover {
         z-index: 2;
         border-color: white;
-        transform: translate3d(-10px, 0, 0) scale(1.01);
+        transform: scale(1.01);
         ${media.tablet`transform: translate3d(-10px, 0, 0);`}
         ${media.phone`transform: translate3d(0,0,0);`}
     }
@@ -149,8 +149,8 @@ const Circle = styled.div `
     width: 300px;
     height: 300px
     border-radius: 50%;
-    background-size: 100% 100%;
     background-position: center;
+    background-size: 100% 100%;
     border: 1px solid rgba(184,237,255,0.9);
     &:hover {
         border-color: white;

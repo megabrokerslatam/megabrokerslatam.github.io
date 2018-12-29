@@ -2,13 +2,13 @@ import React from 'react';
 // import styled components
 import styled from 'styled-components'
 // Component imports
-import Navigator from "../Components/Navigator";
+import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 const Bubbles = (BubblesContent) => props => {
     return (
         <OutterContainer>
-            <Navigator fixed="true" />
+            <Header />
             <BubbleContainer>
                 <BubblesContent />
             </BubbleContainer>

@@ -6,14 +6,14 @@ import Catch from "../Components/Catch";
 import Companies from "../Components/Companies";
 import Blogs from "../Components/BlogLanding";
 import Testimonies from "../Components/TestimonyLanding";
-import Navigator from "../Components/Navigator";
 import Footer from "../Components/Footer";
+import Header from "../Components/Header";
 
 class Landing extends Component {
   render() {
     return (
       <LandingContainer>
-        <Navigator />
+        <Header />
         <Catch />
         <Companies />
         <Blogs />

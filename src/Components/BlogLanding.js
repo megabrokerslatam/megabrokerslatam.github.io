@@ -36,7 +36,7 @@ const BlogsContainer = styled.div `
       font-weight: 220;
       color: dimgray;
       ${media.desktop``}
-      ${media.tablet`font-size: 1.9em;margin: 35px 55px 30px;font-weight: 250;line-height:1.7em`}
+      ${media.tablet`font-size: 1.9em;margin: 35px 55px 30px;font-weight: 250;line-height:1.6em`}
       ${media.phone`font-size: 1.2em;margin: 30px 35px 40px;font-weight: 100;line-height:1.9em`}
   }
 `

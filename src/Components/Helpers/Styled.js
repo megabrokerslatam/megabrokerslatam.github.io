@@ -5,6 +5,8 @@ import { media } from './MediaQueries'
 const Logo = styled.img `
     width: auto;
     height: 58px;
+    ${media.tablet`height: 54px;`}
+    ${media.phone`height: 48px`}
 `
 const Button = styled.button`
     height: 42px;
