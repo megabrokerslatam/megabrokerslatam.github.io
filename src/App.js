@@ -8,7 +8,7 @@ import Blog from "./Screens/Blog";
 import Testimonies from "./Screens/Testimonies";
 import Plans from "./Screens/Plans";
 import Family from "./Screens/Family";
-// import Group from "./Components/Group";
+import Business from "./Screens/Business";
 import About from "./Screens/About";
 import NotFound from "./Screens/NotFound";
 
@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/plans" component={Plans} />
             <Route path="/family" component={Family} />
-            {/* <Route path="/group" component {Group} /> */}
+            <Route path="/group" component={Business} />
             <Route path="/about" component={About} />
             <Route path="/blog" component={Blog} />
             <Route path="/testimonies" component={Testimonies} />

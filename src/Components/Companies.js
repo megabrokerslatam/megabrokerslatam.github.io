@@ -11,7 +11,6 @@ import { media } from './Helpers/MediaQueries'
 import allianz from '../assets/images/companies/allianz.png'
 import bmi from '../assets/images/companies/bmi.png'
 import best from '../assets//images/companies/bestdoctors.png'
-import bupa from '../assets/images/companies/bupa.png'
 import morgan from '../assets/images/companies/morgan.png'
 import redbridge from '../assets/images/companies/redbridge.png'
 import vumi from '../assets/images/companies/vumi.png'
@@ -47,13 +46,13 @@ const CompaniesContainer = styled.div `
     justify-content: space-between;
     & > h2 {
         margin: 15px auto 10px;
-        font-weight: 180;
-        font-size: 1.9em;
+        font-weight: 350;
+        font-size: 1.8em;
         color: dimgray;
         width: 90%;
         ${media.desktop``}
-        ${media.tablet`font-size: 1.6em;margin: 35px 55px 30px;font-weight: 250;line-height:1.8em`}
-        ${media.phone`font-size: 1.2em;margin: 30px 35px 40px;font-weight: 100;line-height:2em`}
+        ${media.tablet`font-size: 1.6em;margin: 35px 55px 30px;font-weight: 300;line-height:1.8em`}
+        ${media.phone`font-size: 1.2em;margin: 30px 35px 40px;font-weight: 250;line-height:2em`}
     }
 `
 const CompanyGroup = styled(RowBetween) `

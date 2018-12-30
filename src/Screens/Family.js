@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 // importing styled components
 import { Logo, Button } from '../Components/Helpers/Styled'
 // importing flex components
-import { Flex1, Column } from '../Components/Helpers/Flex'
+import { Flex1, Flex2, Column } from '../Components/Helpers/Flex'
 // importing components
 
 // importing media queries function
@@ -31,8 +31,11 @@ export default class Family extends React.Component {
     }
     handleInputChange(event) {
         const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
+        let value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
+        if (name === "mainAge" || name === "coupleAge") {
+            value = value.slice(0, 2);
+        }
     
         this.setState({
           [name]: value
@@ -69,22 +72,22 @@ export default class Family extends React.Component {
                         }
                         {this.state.planType === "1" &&
                             <label>Yo tengo 
-                                <Input name="mainAge" type="number" oninput="this.value=this.value.slice(0, 2)" value={this.state.mainAge} onChange={this.handleInputChange}/>
+                                <Input name="mainAge" type="number" value={this.state.mainAge} onChange={this.handleInputChange}/>
                                     años
                             </label>
                         }
                         {this.state.planType === "2" &&
                             <label>Yo tengo 
-                                <Input name="mainAge" type="number" maxLength="2" value={this.state.mainAge} onChange={this.handleInputChange}/>
+                                <Input name="mainAge" type="number" value={this.state.mainAge} onChange={this.handleInputChange}/>
                                 años y mi pareja tiene
-                                <Input name="coupleAge" type="number" maxLength="2" value={this.state.coupleAge} onChange={this.handleInputChange}/> 
+                                <Input name="coupleAge" type="number" value={this.state.coupleAge} onChange={this.handleInputChange}/> 
                             </label>
                         }
                         {this.state.planType === "3" &&
                             <label>Yo tengo 
-                                <Input name="mainAge" type="number" maxLength="2" value={this.state.mainAge} onChange={this.handleInputChange}/>
+                                <Input name="mainAge" type="number" value={this.state.mainAge} onChange={this.handleInputChange}/>
                                     años y mi pareja tiene
-                                <Input name="coupleAge" type="number" maxLength="2" value={this.state.coupleAge} onChange={this.handleInputChange}/> 
+                                <Input name="coupleAge" type="number" value={this.state.coupleAge} onChange={this.handleInputChange}/> 
                                     y tenemos
                                 <Select name="numKids" value={this.state.numKids} onChange={this.handleInputChange}>
                                     <option value=""></option>
@@ -97,7 +100,7 @@ export default class Family extends React.Component {
                         }
                         {this.state.planType === "4" &&
                             <label>Mi familiar tiene 
-                                <Input name="mainAge" type="number" onInput="this.value=this.value.slice(0, 2)" value={this.state.mainAge} onChange={this.handleInputChange}/>
+                                <Input name="mainAge" type="number" value={this.state.mainAge} onChange={this.handleInputChange}/>
                                     años
                             </label>
                         }
@@ -115,7 +118,7 @@ export default class Family extends React.Component {
                             <SubmitButton type="submit" value="Submit">Mostrar Planes</SubmitButton>
                         }
                     </Cotizador>
-                <Flex1 />
+                <Flex2 />
             </FamilyContainer>
         )
     }
@@ -130,6 +133,9 @@ const FamilyContainer = styled(Column) `
     background-size: 90vh auto;
     background-position: 65vw;
     background-repeat: no-repeat;
+    // background-image: linear-gradient(to bottom, 
+    //     #FFFFFF 0px,
+    //     #e5dcef 150%);
     ${media.tablet`background-size: 70vh auto;background-position: 50vw;`}
     ${media.phone`background-size: 60vh auto;background-position: 30vw;`}
 `
@@ -149,14 +155,15 @@ const Cotizador = styled.form`
     & > * {
         margin-bottom: 15px;
     }
-    ${media.tablet`font-size: 1.3em;margin-left:10px;`}
-    ${media.phone`font-size: 1.2em;margin-left:8px;`}
+    ${media.tablet`font-size: 1.2em;margin-left:10px;`}
+    ${media.phone`font-size: 1.1em;margin-left:8px;`}
 `
 const Select = styled.select`
     width: auto;
     font-size: 0.9em;
     background: transparent;
     margin-left: 12px;
+    margin-right: 12px;
     border: none;
     border-bottom: 2px solid #e5dcef;
     &:focus {
@@ -164,8 +171,8 @@ const Select = styled.select`
     &:focus {
         outline: none;
     }
-    ${media.tablet`font-size:1em;margin-left:10px;`}
-    ${media.phone`font-size: 1.2em;margin-left:8px;font-weigth:400`}
+    ${media.tablet`font-size:1em;margin-left:10px;margin-right:10px`}
+    ${media.phone`font-size:1.1em;margin-left:8px;margin-right:8px;font-weigth:400`}
 `
 const Input = styled.input`
     width: 38px;

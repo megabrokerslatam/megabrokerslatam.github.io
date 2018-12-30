@@ -11,7 +11,7 @@ import Header from "../Components/Header";
 import { media } from '../Components/Helpers/MediaQueries'
 // importing images
 import waveR from '../assets/images/waveR.png'
-import wave from '../assets/images/wave.png'
+import waves from '../assets/images/waves.png'
 
 class About extends Component {
   render() {
@@ -49,14 +49,6 @@ const WaveBlock = styled.div`
   width: 100%;
   background-size:100% 100%;
   background-image: url(${waveR});
-  ${media.tablet`height: 42px;`}
-  ${media.phone`height: 15px;`}
-`
-const Wave = styled.div`
-  height: 50px;
-  width: 100%;
-  background-size:100% 100%;
-  background-image: url(${wave});
   ${media.tablet`height: 42px;`}
   ${media.phone`height: 15px;`}
 `

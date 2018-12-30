@@ -12,6 +12,7 @@ import { media } from '../Components/Helpers/MediaQueries'
 // importing images
 import family from '../assets/images/Family.png'
 import group from '../assets/images/Group.png'
+import waves from '../assets/images/waves.png'
 
 const Plans = (props) => {
     return (
@@ -62,6 +63,7 @@ const PlansContainer = styled.div `
 const PlanGroup = styled(RowAround)`
     width: 100%;
     flex-wrap: wrap;
+    background-image: url(${waves});
 `
 const PlansButton = styled.div `
     display: flex;

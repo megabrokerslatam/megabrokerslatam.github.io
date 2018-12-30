@@ -45,9 +45,13 @@ const CatchContainer = styled.div `
     width: 100vw;
     flex-wrap: wrap;
     min-height: 500px;
-    margin: 15px auto 15px;
-    flex-direction: row;
-    background-color: white;
+    margin: 15px auto 0;
+    flex-direction:row;
+    padding-bottom:15px;
+    // background-color: white;
+    background-image: linear-gradient(to bottom, 
+        #FFFFFF 85%,
+        #e5dcef 100%);
     ${media.phone`flex-direction: column`}
 `
 const Intro = styled.div `
@@ -118,6 +122,12 @@ const PlansButton = styled.div `
         margin: 25px 10px;
         ${media.phone`font-size:0.9em;font-weight: 100;margin-top:10px;`}
     }
+    &:hover {
+        &>h3 {
+            font-size: 1.1em;
+            font-weight: 200;
+        }
+    }
     ${media.tablet`width: 300px;height:300px;`}
     ${media.phone`width: 190px;height:190px;`}
 `
@@ -127,8 +137,6 @@ const FamilyPlans = styled(PlansButton) `
         z-index: 2;
         border-color: white;
         transform: scale(1.01);
-        ${media.tablet`transform: translate3d(10px, 0, 0);`}
-        ${media.phone`transform: translate3d(0,0,0);`}
     }
     ${media.tablet`transform: translate3d(25px, 0, 0);`}
     ${media.phone`transform: translate3d(0,0,0);margin-bottom:20px;`}
@@ -139,8 +147,6 @@ const GroupPlans = styled(PlansButton)`
         z-index: 2;
         border-color: white;
         transform: scale(1.01);
-        ${media.tablet`transform: translate3d(-10px, 0, 0);`}
-        ${media.phone`transform: translate3d(0,0,0);`}
     }
     ${media.tablet`transform: translate3d(-25px, 0, 0);`}
     ${media.phone`transform: translate3d(0,0,0);`}
@@ -155,7 +161,6 @@ const Circle = styled.div `
     &:hover {
         border-color: white;
         background-color: #B8EDFF;
-        background-size: 105% 105%;
     }
     ${media.tablet`width: 250px;height:250px;`}
     ${media.phone`width: 150px;height:150px;`}

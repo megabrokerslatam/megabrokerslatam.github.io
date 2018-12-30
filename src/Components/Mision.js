@@ -7,6 +7,7 @@ import { Row, Flex1 } from './Helpers/Flex'
 import { media } from './Helpers/MediaQueries'
 // importing images
 import group from '../assets/images/Asesores.png'
+import waves from '../assets/images/waves.png'
 
 const Mision = props => {
     return (
@@ -23,6 +24,8 @@ const Mision = props => {
 const MisionContainer = styled(Row) `
     width: 100%;
     margin-top: 100px;
+    background-position:center;
+    background-image: url(${waves});
 `
 const Circle = styled.div `
     width: 280px;
