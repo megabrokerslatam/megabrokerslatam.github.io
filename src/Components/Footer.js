@@ -10,7 +10,7 @@ import { Flex1, Row} from './Helpers/Flex'
 // importing media queries function
 import { media } from './Helpers/MediaQueries'
 // importing images
-import logo from '../assets/images/LogoAllWhite.png'
+import logo from '../assets/images/MiniLogo.png'
 
 const Footer = (props) => {
     return (

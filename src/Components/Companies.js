@@ -52,7 +52,7 @@ const CompaniesContainer = styled.div `
         width: 90%;
         ${media.desktop``}
         ${media.tablet`font-size: 1.6em;margin: 35px 55px 30px;font-weight: 300;line-height:1.8em`}
-        ${media.phone`font-size: 1.2em;margin: 30px 35px 40px;font-weight: 250;line-height:2em`}
+        ${media.phone`font-size: 1.2em;margin: 30px 35px 40px;font-weight: 350;line-height:2em`}
     }
 `
 const CompanyGroup = styled(RowBetween) `

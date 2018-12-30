@@ -48,11 +48,12 @@ const CatchContainer = styled.div `
     margin: 15px auto 0;
     flex-direction:row;
     padding-bottom:15px;
-    // background-color: white;
+    background-color: white;
     background-image: linear-gradient(to bottom, 
         #FFFFFF 85%,
         #e5dcef 100%);
-    ${media.phone`flex-direction: column`}
+    ${media.tablet`background-image:none;background-color: white;flex-direction: column`}
+    ${media.phone`background-image:none;background-color: white;flex-direction: column`}
 `
 const Intro = styled.div `
     flex: 4;
@@ -91,8 +92,8 @@ const Subtitle = styled.h3 `
     `}
     ${media.phone`
         margin-top: 40px;
-        font-size: 1.1em;
-        font-weight: 300;
+        font-size: 1.2em;
+        font-weight: 350;
         line-height: 1.5em;
     `}
 `
@@ -125,7 +126,7 @@ const PlansButton = styled.div `
     &:hover {
         &>h3 {
             font-size: 1.1em;
-            font-weight: 200;
+            font-weight: 20  0;
         }
     }
     ${media.tablet`width: 300px;height:300px;`}

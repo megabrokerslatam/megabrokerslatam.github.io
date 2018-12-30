@@ -58,7 +58,7 @@ const FakeHeader = styled.div `
 const TopBar = styled(Row) `
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 5;
     width: 90vw;
     height: 60px;
     padding: 0 5vw;

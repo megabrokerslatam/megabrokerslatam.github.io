@@ -40,8 +40,8 @@ const AboutContainer = styled.div `
       line-height: 1.4em;
       text-align: center;
       margin: 75px auto 75px;
-      ${media.tablet`font-size: 2.4em;margin: 35px auto 25px;font-weight: 300;line-height:1.35em`}
-      ${media.phone`font-size: 1.6em;margin: 30px auto 15px;font-weight: 350;line-height:1.25em;width:80%`}
+      ${media.tablet`font-size: 2.1em;margin: 35px auto 25px;font-weight: 300;line-height:1.35em`}
+      ${media.phone`font-size: 1.6em;margin: 30px auto 15px;font-weight: 350;line-height:1.4em;width:80%`}
   }
 `
 const WaveBlock = styled.div`

@@ -30,9 +30,9 @@ const BlogCont = styled.div `
       font-size: 3em;
       font-weight: 300;
       color: dimgray;
-      margin: 75px auto 75px;
-      ${media.tablet`font-size: 1.9em;margin: 35px 55px 30px;font-weight: 250;line-height:1.7em`}
-      ${media.phone`font-size: 1.2em;margin: 30px 35px 40px;font-weight: 100;line-height:1.9em`}
+      margin: 70px auto 70px;
+      ${media.tablet`font-size: 2.2em;margin: 45px 55px 30px;font-weight: 300;line-height:1.7em`}
+      ${media.phone`font-size: 1.5em;margin: 35px 35px 40px;font-weight: 250;line-height:1.7em`}
   }
 `
 
