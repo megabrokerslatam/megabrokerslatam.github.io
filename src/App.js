@@ -7,7 +7,7 @@ import Landing from "./Screens/Landing";
 import Blog from "./Screens/Blog";
 import Testimonies from "./Screens/Testimonies";
 import Plans from "./Screens/Plans";
-// import Family from "./Components/Family";
+import Family from "./Screens/Family";
 // import Group from "./Components/Group";
 import About from "./Screens/About";
 import NotFound from "./Screens/NotFound";
@@ -23,7 +23,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/plans" component={Plans} />
-            {/* <Route path="/family" component {Family} /> */}
+            <Route path="/family" component={Family} />
             {/* <Route path="/group" component {Group} /> */}
             <Route path="/about" component={About} />
             <Route path="/blog" component={Blog} />
