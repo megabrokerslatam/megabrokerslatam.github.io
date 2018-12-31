@@ -11,7 +11,6 @@ import Header from "../Components/Header";
 import { media } from '../Components/Helpers/MediaQueries'
 // importing images
 import waveR from '../assets/images/waveR.png'
-import waves from '../assets/images/waves.png'
 
 class About extends Component {
   render() {

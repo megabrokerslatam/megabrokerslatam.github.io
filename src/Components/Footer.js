@@ -129,7 +129,7 @@ const FooterItem = styled.div `
 `
 const FooterIcon = styled.div `
     opacity: 0.8;
-    margin-left: 35px;
+    margin-left: 25px;
     ${media.desktop``}
     ${media.tablet`margin-left: 20px;`}
     ${media.phone`margin-left: 15px;`}

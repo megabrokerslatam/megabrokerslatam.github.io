@@ -5,14 +5,16 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 // importing styled components
 import { Logo, Button } from '../Components/Helpers/Styled'
-// importing flex components
-import { Flex1, Flex2, Column, RowAround, RowBetween } from '../Components/Helpers/Flex'
 // importing components
-
+import Thanks from '../Components/Thanks'
+// importing flex components
+import { Flex1, Column, RowBetween } from '../Components/Helpers/Flex'
 // importing media queries function
 import { media } from '../Components/Helpers/MediaQueries'
 // importing images
 import logo from '../assets/images/logo.png'
+// importing axios for http requests
+import axios from 'axios';
 
 export default class Business extends React.Component {
     constructor(props) {
@@ -26,6 +28,7 @@ export default class Business extends React.Component {
             telephone: null,
             numEmployees: null,
             information: '',
+            submited: false,
         }
         this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -41,33 +44,47 @@ export default class Business extends React.Component {
     sendInquiry = (event) => {
         console.log("sending inquiry");
         event.preventDefault();
+        this.setState({
+            submited: true
+        })
+        axios.post(`https://megabrokerslatam.co/wp-json/emailing/v1/prospect/business/?name=${this.state.firstName}&last_name=${this.state.lastName}&city=${this.state.city}&country=${this.state.country}&telephone=${this.state.telephone}&number=${this.state.numEmployees}&email=${this.state.email}&information=${this.state.information}`)
+                .then(res => {
+                    
+                }, error => {
+                    console.log("Error");
+                    console.log(error);
+                })
     }
     render() {
         return (
             <BusinessContainer>
-                <Link to="/"><BusinessLogo alt="megabrokerslatam logo" src={logo} /></Link>
-                <Flex1 />
-                <GroupBlock>
-                    <Intro>
-                        <h1>Obtenga un plan de salud personalizado para su grupo profesional</h1>
-                        <h3>Como funciona:</h3>
-                        <ol>
-                            <li>Completa y envía este formulario</li>
-                            <li>Recibirá un correo electrónico de inmediato con información útil</li>
-                            <li>Le haremos un seguimiento brevemente para programar un horario para hablar</li>
-                        </ol>
-                    </Intro>
-                    <Inquiry onSubmit={this.sendInquiry}>
-                        <Input name="firstName" placeholder="Nombre" type="text" value={this.state.firstName} onChange={this.handleInputChange}/>
-                        <Input name="lastName" placeholder="Apellido" type="text" value={this.state.lastName} onChange={this.handleInputChange}/>
-                        <Input name="city" placeholder="Ciudad" type="text" value={this.state.city} onChange={this.handleInputChange}/>
-                        <Input name="country" placeholder="Pais" type="text" value={this.state.country} onChange={this.handleInputChange}/>
-                        <Input name="telephone" placeholder="Telefono" type="number" value={this.state.mainAge} onChange={this.handleInputChange}/>
-                        <Input required name="email" placeholder="Email" type="email" value={this.state.email} onChange={this.handleInputChange}/>
-                        <LongInput name="numEmployees" placeholder="Numero de empleados" type="number" value={this.state.mainAge} onChange={this.handleInputChange}/>
-                        <LongInput name="information" placeholder="Consultas Adicionales" type="text" value={this.state.information} onChange={this.handleInputChange}/>
-                        <SubmitButton type="submit" value="Submit">Enviar Consulta</SubmitButton>
-                    </Inquiry>
+                    <Link to="/"><BusinessLogo alt="megabrokerslatam logo" src={logo} /></Link>
+                    <Flex1 />
+                    <GroupBlock>
+                        <Intro>
+                            <h1>Obtenga un plan de salud personalizado para su grupo profesional</h1>
+                            <h3>Como funciona:</h3>
+                            <ol>
+                                <li>Completa y envía este formulario</li>
+                                <li>Recibirá un correo electrónico de inmediato con información útil</li>
+                                <li>Le haremos un seguimiento brevemente para programar un horario para hablar</li>
+                            </ol>
+                        </Intro>
+                        {this.state.submited? (
+                            <Thanks />
+                        ):(
+                            <Inquiry onSubmit={this.sendInquiry}>
+                                <Input name="firstName" required placeholder="Nombre" type="text" value={this.state.firstName} onChange={this.handleInputChange}/>
+                                <Input name="lastName" required placeholder="Apellido" type="text" value={this.state.lastName} onChange={this.handleInputChange}/>
+                                <Input name="city" required placeholder="Ciudad" type="text" value={this.state.city} onChange={this.handleInputChange}/>
+                                <Input name="country" required placeholder="Pais" type="text" value={this.state.country} onChange={this.handleInputChange}/>
+                                <Input name="telephone" required placeholder="Telefono" type="number" value={this.state.mainAge} onChange={this.handleInputChange}/>
+                                <Input name="email" required placeholder="Email" type="email" value={this.state.email} onChange={this.handleInputChange}/>
+                                <LongInput name="numEmployees" required placeholder="Numero de empleados" type="number" value={this.state.mainAge} onChange={this.handleInputChange}/>
+                                <LongInput name="information" placeholder="Consultas Adicionales" type="text" value={this.state.information} onChange={this.handleInputChange}/>
+                                <SubmitButton type="submit" value="Submit">Enviar Consulta</SubmitButton>
+                            </Inquiry>
+                        )}
                 </GroupBlock>
                 <Flex1 />
             </BusinessContainer>
@@ -116,8 +133,10 @@ const Intro = styled(Column)`
     ${media.tablet`margin-right:0`}
     ${media.phone`margin-right:0;font-size:0.9em`}
 `
-const Inquiry = styled(RowBetween)`
+const Inquiry = styled.form`
     flex: 2;
+    display: flex;
+    flex-direction: row;
     min-width: 330px;
     flex-wrap: wrap;
     font-size: 1.7em;

@@ -13,6 +13,7 @@ const Button = styled.button`
     width: 150px;
     color: white;
     margin: auto 0;
+    cursor: pointer;
     font-size: 0.9em;
     line-height: 30px;
     text-align: center;

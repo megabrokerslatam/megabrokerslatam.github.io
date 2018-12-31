@@ -10,6 +10,7 @@ import Plans from "./Screens/Plans";
 import Family from "./Screens/Family";
 import Business from "./Screens/Business";
 import About from "./Screens/About";
+import Assessment from "./Screens/Assessment";
 import NotFound from "./Screens/NotFound";
 
 // Using Context to toggle sidenav
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path="/about" component={About} />
             <Route path="/blog" component={Blog} />
             <Route path="/testimonies" component={Testimonies} />
+            <Route path="/assessment/:country/:planType/:mainAge/:secondAge/:numKids" component={Assessment} />
             <Route component={NotFound} />
           </Switch> 
         </div>

@@ -7,27 +7,26 @@ import { Link } from 'react-router-dom'
 import { Logo, Button } from '../Components/Helpers/Styled'
 // importing flex components
 import { Flex1, Flex2, Column } from '../Components/Helpers/Flex'
-// importing components
-
 // importing media queries function
 import { media } from '../Components/Helpers/MediaQueries'
 // importing images
 import logo from '../assets/images/logo.png'
 import lineas from '../assets/images/MegaLineasAzul.png'
+// importing axios for http requests
+import axios from 'axios';
 
 export default class Family extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             country: '',
-            planType: null,
-            mainAge: null,
+            planType: '',
+            mainAge: '',
             coupleAge: null,
             numKids: null,
             email: '',
         }
         this.handleInputChange = this.handleInputChange.bind(this);
-        // this.getQuote = this.handleSubmit.bind(this);
     }
     handleInputChange(event) {
         const target = event.target;
@@ -41,9 +40,46 @@ export default class Family extends React.Component {
           [name]: value
         });
     }
-    getQuote = (event) => {
-        console.log("getting quote");
+    getQuote = (event) => {       
         event.preventDefault();
+        this.sendProspect();
+        this.props.history.push(`/assessment/${this.state.country}/${this.state.planType}/${this.state.mainAge}/${this.state.coupleAge}/${this.state.numKids}`)
+    }
+    sendProspect = () => {
+        const pType = this.state.planType;
+        if (pType === '1') {
+            axios.post(`https://megabrokerslatam.co/wp-json/emailing/v1/prospect/family/?main_age=${this.state.mainAge}&plan_type=1&country=${this.state.country}&email=${this.state.email}`)
+                .then(res => {
+
+                }, error => {
+                    console.log("Error");
+                    console.log(error);
+                })
+        } else if (pType === '2') {
+            axios.post(`https://megabrokerslatam.co/wp-json/emailing/v1/prospect/family/?main_age=${this.state.mainAge}&second_age=${this.props.match.params.secondAge}&plan_type=2&country=${this.state.country}&email=${this.state.email}`)
+                .then(res => {
+
+                }, error => {
+                    console.log("Error");
+                    console.log(error);
+                })
+        } else if (pType === '3') {
+            axios.post(`https://megabrokerslatam.co/wp-json/emailing/v1/prospect/family/?main_age=${this.state.mainAge}&second_age=${this.props.match.params.secondAge}&num_kids=${this.props.match.params.numKids}&plan_type=3&country=${this.state.country}&email=${this.state.email}`)
+                .then(res => {
+
+                }, error => {
+                    console.log("Error");
+                    console.log(error);
+                })
+        } else {
+            axios.post(`https://megabrokerslatam.co/wp-json/emailing/v1/prospect/family/?main_age=${this.state.mainAge}&plan_type=4&country=${this.state.country}&email=${this.state.email}`)
+                .then(res => {
+
+                }, error => {
+                    console.log("Error");
+                    console.log(error);
+                })
+        }
     }
     render() {
         return (

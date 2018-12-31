@@ -2,7 +2,6 @@ import React from 'react'
 // import styled components
 import styled from 'styled-components'
 // importing styled components
-import Bubbles from "../Components/Bubbles";
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 //importing routing elements
