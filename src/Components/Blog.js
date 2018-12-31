@@ -6,7 +6,7 @@ import { Flex2, Flex3 } from './Helpers/Flex'
 // importing media queries function
 import { media } from './Helpers/MediaQueries'
 // importing images
-import caratula from '../assets/images/CaratulaBlog.jpg'
+import caratula from '../assets/images/CaratulaBlog.png'
 
 const BlogDetail = props => {
     return (

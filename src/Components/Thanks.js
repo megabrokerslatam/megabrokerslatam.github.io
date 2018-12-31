@@ -6,7 +6,7 @@ import { Column, Flex2, Flex3 } from './Helpers/Flex'
 // importing media queries function
 import { media } from './Helpers/MediaQueries'
 // importing images
-import abuelos from '../assets/images/Abuelos.png'
+import gracias from '../assets/images/Gracias.png'
 
 const BlogDetail = props => {
     return (
@@ -31,14 +31,14 @@ const ThanksContainer = styled(Column)`
     }
 `
 const ThanksImage = styled.div`
-    width: 350px;
+    width: 400px;
     height: 350px;
     margin-top: 35px;
     margin-bottom: 50px
     background-position: center;
     background-size: 100% 100%;
-    background-image: url(${abuelos});
-    ${media.tablet`width:300px;height:300px;margin-top:35px;`}
-    ${media.phone`width:250px;height:250px;margin-top:25px;`}
+    background-image: url(${gracias});
+    ${media.tablet`width:350px;height:300px;margin-top:35px;`}
+    ${media.phone`width:275px;height:250px;margin-top:25px;`}
 `
 export default BlogDetail;

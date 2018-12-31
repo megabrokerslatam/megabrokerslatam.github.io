@@ -139,6 +139,7 @@ const SubmitButton = styled(Button)`
     width: 200px;
     margin-top: 10px;
     margin-bottom: 0px;
+    border-color: transparent;
     &:focus {
         outline: none;
     }
