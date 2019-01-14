@@ -1,16 +1,15 @@
 import React from 'react'
 // importing styleed components
 import styled from 'styled-components'
-// importing styled components
-import { Logo, Button } from '../Components/Helpers/Styled'
 // importing flex components
-import { Flex1, Flex2, Column, RowAround, RowBetween } from '../Components/Helpers/Flex'
+import { Flex1, Flex2, Column, Row } from '../Components/Helpers/Flex'
 // importing components
 import Loading from '../Components/Loader/Loader';
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import InfoForm from '../Components/InfoForm';
 import ContactForm from '../Components/ContactForm';
+import PlanInfo from '../Components/PlanInfo';
 // importing media queries function
 import { media } from '../Components/Helpers/MediaQueries'
 // importing axios for http requests
@@ -27,9 +26,6 @@ export default class Assessment extends React.Component {
             bronzeRates: [],
             silverRates: [],
             goldRates: [],
-            selectedBronze: null,
-            selectedSilver: null,
-            selectedGold: null,
             benefitTitles: [],
             bronzeBenefits: [],
             silverBenefits: [],
@@ -38,7 +34,6 @@ export default class Assessment extends React.Component {
             firstName: '',
             lastName: '',
             telephone: '',
-            deductibleDescription: 'El deducible es el monto que debe pagar el asegurado antes de ser cubierto por la póliza',
         }
         this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -245,12 +240,15 @@ export default class Assessment extends React.Component {
             <InfoForm />
         ): (
             <Recomendation>
-                <h2>Tu recomendacion de planes personal</h2>
-                <h3>{this.props.match.params.country}</h3>
-                <h3>{this.props.match.params.planType}</h3>
-                <h3>{this.props.match.params.mainAge}</h3>
-                <h3>{this.props.match.params.secondAge}</h3>
-                <h3>{this.props.match.params.numKids}</h3>
+                <PlansHeader>
+                    <ClusterInfo>
+                        <h1>{this.state.clusterName}</h1>
+                        <h3>{this.state.clusterDescription}</h3>
+                    </ClusterInfo>
+                    <PlanInfo plan="Gold" rates={this.state.goldRates}/>
+                    <PlanInfo plan="Silver" rates={this.state.silverRates}/>
+                    <PlanInfo plan="Bronze" rates={this.state.bronzeRates}/>
+                </PlansHeader>
                 <ContactForm />
             </Recomendation>
         )
@@ -281,4 +279,17 @@ const AssessmentContainer = styled(Column)`
 `
 const Recomendation = styled(Column)`
     justify-content: space-around;
+`
+const PlansHeader = styled(Row) `
+    width: 100%;
+`
+const ClusterInfo = styled(Column)`
+    padding: 20px 20px 20px 50px;
+    flex: 4;
+    & > h1 {
+        margin-bottom:0;
+    }
+    & > h3 {
+        font-weight: 350;
+    }
 `

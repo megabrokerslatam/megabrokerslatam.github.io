@@ -16,11 +16,10 @@ export default class ContactForm extends React.Component {
         this.state = {
             fName: '',
             lName: '',
-            phone: null,
+            phone: '',
             submited: false,
         }
         this.handleInputChange = this.handleInputChange.bind(this);
-        // this.getQuote = this.handleSubmit.bind(this);
     }
     handleInputChange(event) {
         const target = event.target;
@@ -46,7 +45,7 @@ export default class ContactForm extends React.Component {
                     <Thanks />
                 ):(
                     <OuterContainer>
-                        <h2>Llena el siguinte formulario para ponernos en contacto</h2>
+                        <h2>Llena el siguiente formulario para ponernos en contacto</h2>
                         <FormContainer onSubmit={this.submit}>
                             <InputsContainer>
                                 <Input name="fName" required type="text" placeholder="Nombre" value={this.state.fName} onChange={this.handleInputChange}/>

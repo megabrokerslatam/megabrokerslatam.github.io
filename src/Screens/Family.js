@@ -35,7 +35,6 @@ export default class Family extends React.Component {
         if (name === "mainAge" || name === "coupleAge") {
             value = value.slice(0, 2);
         }
-    
         this.setState({
           [name]: value
         });
