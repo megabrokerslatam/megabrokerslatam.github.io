@@ -30,8 +30,8 @@ const Benefit = styled(Column) `
     justify-content: center;
     & > p {
         margin: 0;
-        line-height: 1.3em;
-        font-size: 1.1em;
+        font-size: 1em;
+        line-height: 1.2em;
     }
 `
 

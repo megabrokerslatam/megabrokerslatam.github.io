@@ -11,7 +11,7 @@ import gracias from '../assets/images/Gracias.png'
 const BlogDetail = props => {
     return (
         <ThanksContainer>
-            <h2> Muchas gracias, nos pondremos en contacto pronto</h2>
+            <h2> Gracias! Nos pondremos en contacto pronto</h2>
             <ThanksImage />
         </ThanksContainer>
     );

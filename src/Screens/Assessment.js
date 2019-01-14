@@ -319,6 +319,7 @@ const BenefitTitle = styled(Column) `
     justify-content: center;
     & > h3 {
         margin: 0;
+        font-size: 1.1em;
         font-weight: 480;
     }
 `
