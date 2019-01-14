@@ -2,7 +2,7 @@ import React from 'react';
 // import styled components
 import styled from 'styled-components'
 // importing flex components
-import { Column, Flex2, Flex3 } from './Helpers/Flex'
+import { Column } from './Helpers/Flex'
 // importing media queries function
 import { media } from './Helpers/MediaQueries'
 // importing images

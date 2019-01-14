@@ -7,7 +7,7 @@ import Footer from '../Components/Footer';
 //importing routing elements
 import { Link } from 'react-router-dom'
 // importing flex components
-import { Flex1, Column, RowAround } from '../Components/Helpers/Flex'
+import { Flex1, RowAround } from '../Components/Helpers/Flex'
 // importing media queries function
 import { media } from '../Components/Helpers/MediaQueries'
 // importing images

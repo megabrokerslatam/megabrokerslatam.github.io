@@ -1,6 +1,6 @@
 import React from 'react'
 // importing styleed components
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 // importing flex components
 import { Flex1, Row, RowAround } from './Helpers/Flex'
 // importing media queries function

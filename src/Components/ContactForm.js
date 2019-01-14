@@ -2,7 +2,7 @@ import React from 'react';
 // import styled components
 import styled from 'styled-components'
 // importing flex components
-import { Column, Flex1, Flex2 } from './Helpers/Flex'
+import { Column } from './Helpers/Flex'
 // importing styled components
 import { Button } from '../Components/Helpers/Styled'
 // importing components
@@ -50,7 +50,7 @@ export default class ContactForm extends React.Component {
                             <InputsContainer>
                                 <Input name="fName" required type="text" placeholder="Nombre" value={this.state.fName} onChange={this.handleInputChange}/>
                                 <Input name="lName" required type="text" placeholder="Apellido" value={this.state.lName} onChange={this.handleInputChange}/>
-                                <Input name="phone" required type="tel" placeholder="Telefono" value={this.state.phone} onChange={this.handleInputChange}/>
+                                <Input name="phone" required type="tel" placeholder="Teléfono" value={this.state.phone} onChange={this.handleInputChange}/>
                             </InputsContainer>
                             <SubmitButton type="submit" value="Submit">Contactarse</SubmitButton>
                         </FormContainer>

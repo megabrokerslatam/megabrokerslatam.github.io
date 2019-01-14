@@ -2,7 +2,7 @@ import React from 'react'
 // importing styleed components
 import styled from 'styled-components'
 // importing flex components
-import { Flex1, Flex2, Column, Row } from '../Components/Helpers/Flex'
+import { Flex1, Column, Row } from '../Components/Helpers/Flex'
 // importing components
 import Loading from '../Components/Loader/Loader';
 import Footer from "../Components/Footer";
@@ -10,6 +10,7 @@ import Header from "../Components/Header";
 import InfoForm from '../Components/InfoForm';
 import ContactForm from '../Components/ContactForm';
 import PlanInfo from '../Components/PlanInfo';
+import PlanBenefits from '../Components/PlanBenefits';
 // importing media queries function
 import { media } from '../Components/Helpers/MediaQueries'
 // importing axios for http requests
@@ -249,6 +250,18 @@ export default class Assessment extends React.Component {
                     <PlanInfo plan="Silver" rates={this.state.silverRates}/>
                     <PlanInfo plan="Bronze" rates={this.state.bronzeRates}/>
                 </PlansHeader>
+                <PlansBenefits>
+                    <BenefitTitles>
+                        {this.state.goldBenefits.map((benefit, index) => (
+                            <BenefitTitle key={index}>
+                                <h3>{benefit.name}</h3>
+                            </BenefitTitle>
+                        ))}
+                    </BenefitTitles>
+                    <PlanBenefits benefits={this.state.goldBenefits}/>
+                    <PlanBenefits benefits={this.state.silverBenefits}/>
+                    <PlanBenefits benefits={this.state.bronzeBenefits}/>
+                </PlansBenefits>
                 <ContactForm />
             </Recomendation>
         )
@@ -274,22 +287,38 @@ const AssessmentContainer = styled(Column)`
     min-height: 100vh;
     background-image: linear-gradient(to bottom, 
         #FFFFFF 0%,
-        #e5dcef 50%,
-        #FFFFFF 90%);
+        #e5dcef 20%,
+        #e5dcef 90%,
+        #FFFFFF 98%)
 `
 const Recomendation = styled(Column)`
     justify-content: space-around;
 `
 const PlansHeader = styled(Row) `
-    width: 100%;
 `
 const ClusterInfo = styled(Column)`
-    padding: 20px 20px 20px 50px;
     flex: 4;
+    padding: 20px 50px;
     & > h1 {
         margin-bottom:0;
     }
     & > h3 {
         font-weight: 350;
+    }
+`
+const PlansBenefits = styled(Row) `
+`
+const BenefitTitles = styled(Column) `
+    flex: 4;
+    padding: 10px 50px;
+    text-align: center;
+    align-items: center;
+`
+const BenefitTitle = styled(Column) `
+    height: 95px;
+    justify-content: center;
+    & > h3 {
+        margin: 0;
+        font-weight: 480;
     }
 `

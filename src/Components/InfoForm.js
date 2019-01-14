@@ -2,7 +2,7 @@ import React from 'react';
 // import styled components
 import styled from 'styled-components'
 // importing flex components
-import { Column, Flex1, Flex2 } from './Helpers/Flex'
+import { Column } from './Helpers/Flex'
 // importing styled components
 import { Button } from '../Components/Helpers/Styled'
 // importing components

@@ -2,7 +2,7 @@ import React from 'react';
 // import styled components
 import styled from 'styled-components'
 // importing flex components
-import { Column, Flex3 } from './Helpers/Flex'
+import { Column } from './Helpers/Flex'
 // importing media queries function
 import { media } from './Helpers/MediaQueries'
 // importing images
@@ -45,8 +45,8 @@ export default class PlanInfo extends React.Component {
                 {planImage}
                 <Deductible>Deducible: 
                     <select name="selectedRate" value={this.state.selectedRate} onChange={this.handleInputChange}>
-                        {this.props.rates.map((rate) => (
-                            <option value={rate.biyearly_rate}>
+                        {this.props.rates.map((rate, index) => (
+                            <option key={index} value={rate.biyearly_rate}>
                                 ${rate.deductible}
                             </option>
                             ))
@@ -63,8 +63,8 @@ export default class PlanInfo extends React.Component {
 const PlanContainer = styled(Column) `
     flex: 3;
     padding: 10px 20px;
-    align-items: center;
     text-align: center;
+    align-items: center;
     justify-content: space-around;
 `
 const PlanImage = styled.img`
@@ -73,15 +73,23 @@ const PlanImage = styled.img`
     margin-bottom: 25px;
 `
 const Deductible = styled.span`
+    font-size: 1.1em;
     & > select {
+        height: 100%;
         margin-left:10px;
+        font-size: 0.9em;
+        border: none;
+        &:focus {
+            outline: none;
+        }
     }
 `
 const DeducibleDescription = styled.p `
-    font-size: 0.8em;
+    font-size: 0.9em;
     color: dimgray;
     margin: 0;
 `
 const Price = styled.p `
-    font-size: 1.2em;
+    font-size: 1.3em;
+    font-weight: 500;
 `

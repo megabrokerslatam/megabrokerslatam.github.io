@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 // importing media queries function
 import { media } from './MediaQueries'
 
@@ -24,6 +24,9 @@ const Button = styled.button`
         color: #40B4E5;
         background-color: transparent;
         border-color: #40B4E5;
+    }
+    &:focus {
+        outline: none;
     }
     ${media.desktop``}
     ${media.tablet``}
