@@ -24,6 +24,7 @@ const BenefitsContainer = styled(Column) `
     text-align: center;
     align-items: center;
     border-left: 1px solid silver;
+    ${media.tablet`flex: 2;padding: 10px;border-left: 1px solid lightgrey;`}
 `
 const Benefit = styled(Column) `
     height: 95px;
@@ -32,6 +33,7 @@ const Benefit = styled(Column) `
         margin: 0;
         font-size: 1em;
         line-height: 1.2em;
+        ${media.tablet`height:110px;font-size:0.9em;line-height:1.1em;font-weight:420;`}
     }
 `
 

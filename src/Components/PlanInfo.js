@@ -66,11 +66,16 @@ const PlanContainer = styled(Column) `
     text-align: center;
     align-items: center;
     justify-content: space-around;
+    ${media.tablet`flex: 2;padding: 10px;`}
+    &>h2 {
+        ${media.tablet`font-size: 1.3em;`}
+    }
 `
 const PlanImage = styled.img`
     width: 75px;
     height: 75px;
     margin-bottom: 25px;
+    ${media.tablet`width:65px;height:65px;`}
 `
 const Deductible = styled.span`
     font-size: 1.1em;
@@ -79,6 +84,7 @@ const Deductible = styled.span`
         margin-left:10px;
         font-size: 0.9em;
         border: none;
+        ${media.tablet`margin-left:5px;border: 1px solid #e5dcef`}
         &:focus {
             outline: none;
         }

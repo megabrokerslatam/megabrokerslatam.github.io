@@ -295,24 +295,30 @@ const Recomendation = styled(Column)`
     justify-content: space-around;
 `
 const PlansHeader = styled(Row) `
+    width: 100%
 `
 const ClusterInfo = styled(Column)`
     flex: 4;
     padding: 20px 50px;
+    ${media.tablet`flex: 3;padding: 15px 35px;`}
     & > h1 {
         margin-bottom:0;
+
     }
     & > h3 {
         font-weight: 350;
+        ${media.tablet`font-size: 1.1em;`}
     }
 `
 const PlansBenefits = styled(Row) `
+    width: 100%;
 `
 const BenefitTitles = styled(Column) `
     flex: 4;
     padding: 10px 50px;
     text-align: center;
     align-items: center;
+    ${media.tablet`flex: 3;padding: 10px 35px;`}
 `
 const BenefitTitle = styled(Column) `
     height: 95px;
@@ -321,5 +327,6 @@ const BenefitTitle = styled(Column) `
         margin: 0;
         font-size: 1.1em;
         font-weight: 480;
+        ${media.tablet`height:110px;font-size:1em;font-weight:500;`}
     }
 `
