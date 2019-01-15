@@ -20,12 +20,12 @@ const Plans = (props) => {
         <PlansContainer>
             <Header />
             <h2>Seguros de salud para todos</h2>
-            <h3>Protege a ti y a tu familia o a tu empresa </h3>
+            <h3>Protege a tí y a tu familia o a tu empresa </h3>
             <Flex1 />
             <PlanGroup>
                 <FamilyPlans>
                     <Link to="/family"><FamImage /></Link>
-                    <h3>La protección más COMPLETA para ti y tus seres queridos</h3>
+                    <h3>La protección más COMPLETA para tí y tus seres queridos</h3>
                 </FamilyPlans>
                 <GroupPlans>
                     <Link to="/group"><GroupImage /></Link>

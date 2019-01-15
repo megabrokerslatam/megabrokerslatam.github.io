@@ -11,6 +11,8 @@ import InfoForm from '../Components/InfoForm';
 import ContactForm from '../Components/ContactForm';
 import PlanInfo from '../Components/PlanInfo';
 import PlanBenefits from '../Components/PlanBenefits';
+import MobilePlanInfo from '../Components/MobilePlanInfo';
+import MobilePlanBenefits from '../Components/MobilePlanBenefits';
 // importing media queries function
 import { media } from '../Components/Helpers/MediaQueries'
 // importing axios for http requests
@@ -31,12 +33,13 @@ export default class Assessment extends React.Component {
             bronzeBenefits: [],
             silverBenefits: [],
             goldBenefits: [],
-            activeTab: 1,
+            activeTab: 2,
             firstName: '',
             lastName: '',
             telephone: '',
         }
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.switchTab = this.switchTab.bind(this);
     }
     handleInputChange(event) {
         const target = event.target;
@@ -236,7 +239,13 @@ export default class Assessment extends React.Component {
     //             })
     //     }
     // }
+    switchTab(tabNumber) {
+        this.setState({
+            activeTab: tabNumber
+        })
+    }
     render() {
+        let phoneScreen = (window.innerWidth <= 760);
         const content = this.state.default? (
             <InfoForm />
         ): (
@@ -249,6 +258,24 @@ export default class Assessment extends React.Component {
                     <PlanInfo plan="Gold" rates={this.state.goldRates}/>
                     <PlanInfo plan="Silver" rates={this.state.silverRates}/>
                     <PlanInfo plan="Bronze" rates={this.state.bronzeRates}/>
+                    {phoneScreen &&
+                        <div style={{display: 'flex',flexDirection: 'column',height:'100%'}}>
+                            <PlanTabs>
+                                <Tab onClick={() => this.switchTab(1)} className={((this.state.activeTab === 1) ? 'selected' : 'unselected')}><h2>Plan <span style={{color: "#C1A043"}}>Oro</span></h2></Tab>
+                                <Tab onClick={() => this.switchTab(2)} className={((this.state.activeTab === 2) ? 'selected' : 'unselected')}><h2>Plan <span style={{color: "#B2AEAC"}}>Plata</span></h2></Tab>
+                                <Tab onClick={() => this.switchTab(3)} className={((this.state.activeTab === 3) ? 'selected' : 'unselected')}><h2>Plan <span style={{color: "#C0885D"}}>Bronze</span></h2></Tab>
+                            </PlanTabs>
+                            {phoneScreen && (this.state.activeTab === 1) &&
+                                <MobilePlanInfo plan="Gold" rates={this.state.goldRates}/>
+                            }
+                            {phoneScreen && (this.state.activeTab === 2) &&
+                                <MobilePlanInfo plan="Silver" rates={this.state.silverRates}/>
+                            }
+                            {phoneScreen && (this.state.activeTab === 3) && 
+                                <MobilePlanInfo plan="Bronze" rates={this.state.bronzeRates}/>
+                            }
+                        </div>
+                    }
                 </PlansHeader>
                 <PlansBenefits>
                     <BenefitTitles>
@@ -261,6 +288,15 @@ export default class Assessment extends React.Component {
                     <PlanBenefits benefits={this.state.goldBenefits}/>
                     <PlanBenefits benefits={this.state.silverBenefits}/>
                     <PlanBenefits benefits={this.state.bronzeBenefits}/>
+                    {phoneScreen && (this.state.activeTab === 1) &&
+                        <MobilePlanBenefits benefits={this.state.goldBenefits}/>
+                    }
+                    {phoneScreen && (this.state.activeTab === 2) &&
+                        <MobilePlanBenefits benefits={this.state.silverBenefits}/>
+                    }
+                    {phoneScreen && (this.state.activeTab === 3) &&
+                        <MobilePlanBenefits benefits={this.state.bronzeBenefits}/>
+                    }
                 </PlansBenefits>
                 <ContactForm />
             </Recomendation>
@@ -301,13 +337,41 @@ const ClusterInfo = styled(Column)`
     flex: 4;
     padding: 20px 50px;
     ${media.tablet`flex: 3;padding: 15px 35px;`}
+    ${media.phone`flex: 1;padding: 10px 25px;`}
     & > h1 {
         margin-bottom:0;
-
+        font-weight: 450;
+        ${media.phone`font-size:1.1em;`}
     }
     & > h3 {
         font-weight: 350;
         ${media.tablet`font-size: 1.1em;`}
+        ${media.phone`font-size:0.9em;`}
+    }
+`
+const PlanTabs = styled(Row) `
+    width: 100%;
+    padding-top: 10px;
+`
+const Tab = styled.button `
+    flex: 1;
+    background-color: transparent;
+    &:focus {
+        outline: none;
+        border: none;
+    }
+    &.selected {
+        border-radius: 4px;
+        border: 2px solid #e5dcef;
+        border-bottom: none;
+    }
+    &.unselected {
+        border:none;
+        border-bottom: 2px solid #e5dcef;
+    }
+    &>h2 {
+        font-size: 1.3em;
+        font-weight: 450;
     }
 `
 const PlansBenefits = styled(Row) `
@@ -319,14 +383,18 @@ const BenefitTitles = styled(Column) `
     text-align: center;
     align-items: center;
     ${media.tablet`flex: 3;padding: 10px 35px;`}
+    ${media.phone`flex: 1;padding: 10px 25px;`}
 `
 const BenefitTitle = styled(Column) `
     height: 95px;
     justify-content: center;
+    ${media.tablet`height:110px;`}
+    ${media.phone`height:100px;`}
     & > h3 {
         margin: 0;
         font-size: 1.1em;
         font-weight: 480;
-        ${media.tablet`height:110px;font-size:1em;font-weight:500;`}
+        ${media.tablet`font-size:1em;font-weight:500;`}
+        ${media.phone`font-size:0.9em;font-weight:450;`}
     }
 `

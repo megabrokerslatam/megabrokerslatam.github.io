@@ -10,7 +10,7 @@ import goldBars from '../assets/images/GoldBars.png'
 import silverBars from '../assets/images/SilverBars.png'
 import bronzeBars from '../assets/images/BronzeBars.png'
 
-export default class PlanInfo extends React.Component {
+export default class MobilePlanInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,12 +27,6 @@ export default class PlanInfo extends React.Component {
         });
     }
     render() {
-        let planTitle = <h2>Plan <span style={{color: "#C1A043"}}>Oro</span></h2>
-        if (this.props.plan === "Silver") {
-            planTitle = <h2>Plan <span style={{color: "#B2AEAC"}}>Plata</span></h2>
-        } else if (this.props.plan === "Bronze") {
-            planTitle = <h2>Plan <span style={{color: "#C0885D"}}>Bronze</span></h2>
-        }
         let planImage = <PlanImage alt="Bronze plan" src={goldBars} />;
         if (this.props.plan === "Silver") {
             planImage =  <PlanImage alt="Gold plan" src={silverBars} />
@@ -41,7 +35,6 @@ export default class PlanInfo extends React.Component {
         }
         return (
             <PlanContainer>
-                {planTitle}
                 {planImage}
                 <Deductible>Deducible: 
                     <select name="selectedRate" value={this.state.selectedRate} onChange={this.handleInputChange}>
@@ -61,32 +54,30 @@ export default class PlanInfo extends React.Component {
 }
 
 const PlanContainer = styled(Column) `
-    flex: 3;
-    padding: 10px 20px;
+    flex: 1;
+    display: none;
+    padding: 10px 15px;
     text-align: center;
     align-items: center;
-    justify-content: space-around;
-    ${media.tablet`flex: 2;padding: 10px;`}
-    ${media.phone`display: none`}
+    justify-content: space-between;
+    ${media.phone`display: flex;flex:1;`}
     &>h2 {
-        font-weight: 480;
-        ${media.tablet`font-size: 1.4em;`}
+        font-size: 1.3em;
+        font-weight: 450;
     }
 `
 const PlanImage = styled.img`
     width: 75px;
     height: 75px;
-    margin-bottom: 25px;
-    ${media.tablet`width:65px;height:65px;`}
+    margin-bottom: 20px;
 `
 const Deductible = styled.span`
     font-size: 1.1em;
     & > select {
         height: 100%;
-        margin-left:10px;
+        margin-left: 5px;
         font-size: 0.9em;
-        border: none;
-        ${media.tablet`margin-left:5px;border: 1px solid #e5dcef`}
+        border: 1px solid #e5dcef;
         &:focus {
             outline: none;
         }
@@ -98,6 +89,6 @@ const DeducibleDescription = styled.p `
     margin: 0;
 `
 const Price = styled.p `
-    font-size: 1.3em;
-    font-weight: 480;
+    font-size: 1.2em;
+    font-weight: 450;
 `

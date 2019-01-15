@@ -19,25 +19,23 @@ const PlanBenefits = props => {
 }
 
 const BenefitsContainer = styled(Column) `
-    flex: 3;
-    padding: 10px 20px;
+    flex: 1;
+    height: 100%;
+    display: none;
+    padding: 10px 15px;
     text-align: center;
     align-items: center;
     border-left: 1px solid silver;
-    ${media.tablet`flex: 2;padding: 10px;border-left: 1px solid lightgrey;`}
-    ${media.phone`display: none`}
+    ${media.phone`display: flex;flex: 1;`}
 `
 const Benefit = styled(Column) `
-    height: 95px;
+    height: 100px;
     justify-content: center;
-    ${media.tablet`height:110px;`}
-    ${media.phone`height:120px;`}
     & > p {
         margin: 0;
-        font-size: 1em;
+        font-size: 0.8em;
         line-height: 1.2em;
-        ${media.tablet`font-size:0.9em;line-height:1.1em;font-weight:420;`}
-        ${media.phone`font-size:0.9em;line-height:1.1em;font-weight:400;`}
+        font-weight: 400;
     }
 `
 

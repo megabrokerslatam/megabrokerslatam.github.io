@@ -40,9 +40,9 @@ export default Sidenav;
 const SidenavContainer = styled.div `
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 8;
     opacity: 1;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: none;
     position: fixed;

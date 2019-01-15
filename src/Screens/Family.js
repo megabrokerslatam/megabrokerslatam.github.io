@@ -191,7 +191,7 @@ const Cotizador = styled.form`
         margin-bottom: 15px;
     }
     ${media.tablet`font-size: 1.2em;margin-left:10px;`}
-    ${media.phone`font-size: 1.1em;margin-left:8px;`}
+    ${media.phone`flex:6;font-size: 1.1em;margin-left:8px;`}
 `
 const Select = styled.select`
     width: auto;

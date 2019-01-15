@@ -20,14 +20,14 @@ class Catch extends Component {
             <Flex2 />
                 <Column>
                     <Title>Protección mundial a tu alcance</Title>
-                    <Subtitle style={{marginTop: 0}}>La manera mas facil de encontrar un seguro internacional con asesores enfocados en tu bienestar</Subtitle>
+                    <Subtitle style={{marginTop: 0}}>La manera mas fácil de encontrar un seguro internacional con asesores enfocados en tu bienestar</Subtitle>
                 </Column>
             <Flex2 />
         </Intro>
         <Hook>
             <FamilyPlans>
                 <Link to="/family"><FamImage /></Link>
-                <h3>Planes para ti y tu familia</h3>
+                <h3>Planes para tí y tu familia</h3>
             </FamilyPlans>
             <GroupPlans>
                 <Link to="/group"><GroupImage /></Link>
