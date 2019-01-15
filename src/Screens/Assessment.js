@@ -33,7 +33,7 @@ export default class Assessment extends React.Component {
             bronzeBenefits: [],
             silverBenefits: [],
             goldBenefits: [],
-            activeTab: 2,
+            activeTab: 1,
             firstName: '',
             lastName: '',
             telephone: '',
@@ -259,7 +259,7 @@ export default class Assessment extends React.Component {
                     <PlanInfo plan="Silver" rates={this.state.silverRates}/>
                     <PlanInfo plan="Bronze" rates={this.state.bronzeRates}/>
                     {phoneScreen &&
-                        <div style={{display: 'flex',flexDirection: 'column',height:'100%'}}>
+                        <PlansInfo>
                             <PlanTabs>
                                 <Tab onClick={() => this.switchTab(1)} className={((this.state.activeTab === 1) ? 'selected' : 'unselected')}><h2>Plan <span style={{color: "#C1A043"}}>Oro</span></h2></Tab>
                                 <Tab onClick={() => this.switchTab(2)} className={((this.state.activeTab === 2) ? 'selected' : 'unselected')}><h2>Plan <span style={{color: "#B2AEAC"}}>Plata</span></h2></Tab>
@@ -274,7 +274,7 @@ export default class Assessment extends React.Component {
                             {phoneScreen && (this.state.activeTab === 3) && 
                                 <MobilePlanInfo plan="Bronze" rates={this.state.bronzeRates}/>
                             }
-                        </div>
+                        </PlansInfo>
                     }
                 </PlansHeader>
                 <PlansBenefits>
@@ -349,9 +349,11 @@ const ClusterInfo = styled(Column)`
         ${media.phone`font-size:0.9em;`}
     }
 `
+const PlansInfo = styled(Column) `
+    flex: 1;
+    padding: 10px 15px;
+`
 const PlanTabs = styled(Row) `
-    width: 100%;
-    padding-top: 10px;
 `
 const Tab = styled.button `
     flex: 1;

@@ -54,13 +54,13 @@ export default class MobilePlanInfo extends React.Component {
 }
 
 const PlanContainer = styled(Column) `
-    flex: 1;
+    flex: 6;
     display: none;
-    padding: 10px 15px;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
-    ${media.phone`display: flex;flex:1;`}
+    padding-top: 20px;
+    justify-content: space-around;
+    ${media.phone`display: flex;`}
     &>h2 {
         font-size: 1.3em;
         font-weight: 450;
@@ -69,14 +69,13 @@ const PlanContainer = styled(Column) `
 const PlanImage = styled.img`
     width: 75px;
     height: 75px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 `
 const Deductible = styled.span`
     font-size: 1.1em;
     & > select {
-        height: 100%;
-        margin-left: 5px;
         font-size: 0.9em;
+        margin-top: 5px;
         border: 1px solid #e5dcef;
         &:focus {
             outline: none;
