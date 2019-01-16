@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/bmi.fafb59d8.png"
   },
   {
-    "revision": "b81db732ba46709e9444",
+    "revision": "66232a5a8fe6d768b491",
     "url": "/static/css/main.832f1b73.chunk.css"
   },
   {
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/static/media/allianz.29a26394.png"
   },
   {
-    "revision": "b81db732ba46709e9444",
-    "url": "/static/js/main.b81db732.chunk.js"
+    "revision": "66232a5a8fe6d768b491",
+    "url": "/static/js/main.66232a5a.chunk.js"
   },
   {
     "revision": "c09c018bf847f64b4a854ef492708132",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/static/media/Abuelos.97f4bf11.png"
   },
   {
-    "revision": "09614027dbdd7c2ab9ea0d39f79e5812",
+    "revision": "a660030975f6a0693b5fcc69e117c704",
     "url": "/index.html"
   }
 ];
