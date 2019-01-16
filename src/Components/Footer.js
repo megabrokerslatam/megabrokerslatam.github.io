@@ -24,7 +24,7 @@ const Footer = (props) => {
                         </LinkContainer>
                         <Flex1 />
                         <FooterItem><Link to="/policy">Poliza de Privacidad</Link></FooterItem>
-                        <FooterItem><Link to="/condicions">Terminos y Condiciones</Link></FooterItem>
+                        <FooterItem><Link to="/">Megabrokers LATAM &copy;</Link></FooterItem>
                         <Flex1 />
                         <IconsContainer>
                             <a href="https://www.facebook.com/megabrokerslatam/" target="_blank" rel="noopener noreferrer">
@@ -58,7 +58,7 @@ const Footer = (props) => {
                     </LinkContainer>
                     <ItemsContainer>
                         <FooterItem><Link to="/policy">Poliza de Privacidad</Link></FooterItem>
-                        <FooterItem><Link to="/condicions">Terminos y Condiciones</Link></FooterItem>
+                        <FooterItem><Link to="/">Megabrokers LATAM &copy;</Link></FooterItem>
                     </ItemsContainer>
                     <IconsContainer>
                         <a href="https://www.facebook.com/megabrokerslatam/" target="_blank" rel="noopener noreferrer">

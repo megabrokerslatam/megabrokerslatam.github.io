@@ -29,7 +29,7 @@ const Sidenav = props => {
             <SidenavItem onClick={props.toggle}><Link to="/testimonies">TESTIMONIOS</Link></SidenavItem>
             <RowAround>
                 <SidenavSmallItem onClick={props.toggle}><Link to="/blog">Poliza de Privacidad</Link></SidenavSmallItem>
-                <SidenavSmallItem onClick={props.toggle}><Link to="/blog">Terminos y Condiciones</Link></SidenavSmallItem>
+                <SidenavSmallItem onClick={props.toggle}><Link to="/">Megabrokers LATAM &copy;</Link></SidenavSmallItem>
             </RowAround>
         </SidenavContainer>
     );
