@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/static/media/bmi.fafb59d8.png"
   },
   {
-    "revision": "66232a5a8fe6d768b491",
-    "url": "/static/css/main.832f1b73.chunk.css"
+    "revision": "edbca594565fb62a81af",
+    "url": "/static/css/main.9c008d06.chunk.css"
   },
   {
-    "revision": "5413f3ec5b931dd3a49f",
-    "url": "/static/js/1.5413f3ec.chunk.js"
+    "revision": "7f21fef25df2bb2966f1",
+    "url": "/static/js/1.7f21fef2.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/static/media/allianz.29a26394.png"
   },
   {
-    "revision": "66232a5a8fe6d768b491",
-    "url": "/static/js/main.66232a5a.chunk.js"
+    "revision": "edbca594565fb62a81af",
+    "url": "/static/js/main.edbca594.chunk.js"
   },
   {
     "revision": "c09c018bf847f64b4a854ef492708132",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/static/media/Abuelos.97f4bf11.png"
   },
   {
-    "revision": "a660030975f6a0693b5fcc69e117c704",
+    "revision": "1ecf3badc3fb8a0b5abcedf0f8cfca92",
     "url": "/index.html"
   }
 ];
